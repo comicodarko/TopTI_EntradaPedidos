@@ -9,6 +9,10 @@ export const Container = styled.View`
   padding: ${normalize(30)}px ${normalize(12)}px ${normalize(5)}px ${normalize(12)}px;
 `;
 
+export const Scroll = styled.ScrollView`
+  width: 100%;
+`
+
 export const MenuButton = styled.TouchableOpacity`
   position: absolute;
   top: ${normalize(30)}px;
@@ -18,12 +22,12 @@ export const MenuButton = styled.TouchableOpacity`
   border: 1px solid #14BDAA;
   align-items: center;
   justify-content: center;
-  border-radius: 10px;
+  border-radius: 5px;
   align-self: flex-start;
 `
 
 export const Title = styled.Text`
-  width: 90%;
+  width: 100%;
   font-family: sans-serif-condensed;
   text-transform: uppercase;
   text-align: center;
@@ -32,7 +36,7 @@ export const Title = styled.Text`
   padding-bottom: ${normalize(10)}px;
   border-bottom-width: 2px;
   border-color: #14BDAA;
-  margin-bottom: ${normalize(10)}px;
+  margin-bottom: ${normalize(5)}px;
 `
 
 export const ModalTitle = styled(Title)`
@@ -46,7 +50,7 @@ export const ModalTitle = styled(Title)`
 export const ModalView = styled.View`
   width: ${normalize(350)}px;
   height: ${normalize(160)}px;
-  border-radius: 10px;
+  border-radius: 5px;
   background-color: #fff;
   align-self: center;
   justify-content: center;
@@ -77,17 +81,19 @@ export const Row = styled.View`
   flex-direction: row;
 `
 
-export const GetView = styled(Row)`
+export const DefaultView = styled(Row)`
   width: 100%;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: ${normalize(20)}px;
-  margin-top: ${normalize(20)}px;
+  margin-bottom: ${normalize(3)}px;
+  margin-top: ${normalize(5)}px;
 `
 
 export const DefaultButton = styled.TouchableOpacity`
   background-color: #14BDAA;
   padding: ${normalize(10)}px ${normalize(20)}px;
+  width: 150px;
+  margin-top: 10px;
   border-radius: 5px;
   justify-content: center;
   align-items: center;
@@ -97,6 +103,11 @@ export const DefaultText = styled.Text`
   color: #fff;
   font-size: ${normalize(24)}px;
   font-family: sans-serif-light;
+`
+
+export const Header = styled.View`
+  justify-content: space-around;
+  width: 100%;
 `
 
 export const DateView = styled.View`
@@ -115,4 +126,64 @@ export const DateText = styled.Text`
   color: #fff;
   font-size: ${normalize(24)}px;
   font-family: sans-serif-condensed;
+`
+
+export const Input = styled.TextInput`
+  background-color: #fff;
+  font-size: ${normalize(18)}px;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: ${normalize(10)}px;
+  padding-right: ${normalize(10)}px;
+  border-bottom-width: 3px;
+  border-bottom-color: #14BDAA;
+  border-radius: 5px;
+  height: ${normalize(40)}px;
+  flex: 1;
+  width: 80px;
+  max-width: 200px;
+`
+
+export const PickerView = styled.View`
+  width: 48%;
+  background-color: #fff;
+  border-bottom-width: 3px;
+  margin-top: 5px;
+  border-color: #14BDAA; 
+  border-radius: 5px;
+`;
+
+export const Details = styled.View`
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
+  padding-bottom: 5px;
+  border-bottom-width: 2px;
+  border-color: #14BDAA;
+`
+ 
+export const Service = styled.View`
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  background: #fff;
+  width: 45%;
+  margin-top: 10px;
+  padding: 5px 10px;
+  border-radius: 5px;
+`
+
+export const ServiceText = styled(DefaultText)`
+  font-size: 16px;
+  font-family: sans-serif-condensed;
+  text-transform: uppercase;
+  color: #000;
+`
+
+export const AddService = styled(DefaultButton)`
+  background-color: #F99702;
+  padding: ${normalize(5)}px ${normalize(10)}px;
+  margin-top: 10px;
 `
