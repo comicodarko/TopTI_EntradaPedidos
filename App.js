@@ -7,6 +7,7 @@ import { createDrawerNavigator  } from '@react-navigation/drawer';
 
 import Login from './src/Pages/Login';
 import Main from './src/Pages/Main';
+import Details from './src/Pages/Main/Details';
 import DrawerMenu from './src/components/DrawerMenu';
 
 const Drawer = createDrawerNavigator();
@@ -35,6 +36,7 @@ function App() {
         >
           <Drawer.Screen initialParams={{ ip: '', funcionario: ''}} name="Login" component={Login} />      
           <Drawer.Screen name="StackNav" component={StackNav} />
+          <Drawer.Screen name="Details" component={Details} />
         </Drawer.Navigator>
     </NavigationContainer>
   )

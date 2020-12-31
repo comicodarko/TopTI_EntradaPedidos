@@ -105,7 +105,6 @@ export default function Login({ navigation, route }) {
 
   return (
     <Container>
-
       <MenuButton onPress={() => openDrawer()}>
         <MenuIcon name="menu" size={40} color='#14BDAA'/>
       </MenuButton>

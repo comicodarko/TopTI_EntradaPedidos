@@ -5,13 +5,10 @@ import normalize from '../../utils/normalize';
 export const Container = styled.View`
   flex: 1;
   align-items: center;
+  justify-content: center;
   background-color: #202020;
   padding: ${normalize(30)}px ${normalize(12)}px ${normalize(5)}px ${normalize(12)}px;
 `;
-
-export const Scroll = styled.ScrollView`
-  width: 100%;
-`
 
 export const MenuButton = styled.TouchableOpacity`
   position: absolute;
@@ -101,7 +98,7 @@ export const DefaultButton = styled.TouchableOpacity`
 
 export const DefaultText = styled.Text`
   color: #fff;
-  font-size: ${normalize(24)}px;
+  font-size: ${normalize(26)}px;
   font-family: sans-serif-light;
 `
 
@@ -152,38 +149,3 @@ export const PickerView = styled.View`
   border-color: #14BDAA; 
   border-radius: 5px;
 `;
-
-export const Details = styled.View`
-  flex-direction: row;
-  width: 100%;
-  justify-content: space-around;
-  padding-bottom: 5px;
-  border-bottom-width: 2px;
-  border-color: #14BDAA;
-`
- 
-export const Service = styled.View`
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  width: 100%;
-  background: #fff;
-  width: 45%;
-  margin-top: 10px;
-  padding: 5px 10px;
-  border-radius: 5px;
-`
-
-export const ServiceText = styled(DefaultText)`
-  font-size: 16px;
-  font-family: sans-serif-condensed;
-  text-transform: uppercase;
-  color: #000;
-`
-
-export const AddService = styled(DefaultButton)`
-  background-color: #F99702;
-  padding: ${normalize(5)}px ${normalize(10)}px;
-  margin-top: 10px;
-`
