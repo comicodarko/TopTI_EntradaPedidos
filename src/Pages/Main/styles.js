@@ -36,6 +36,11 @@ export const Title = styled.Text`
   margin-bottom: ${normalize(5)}px;
 `
 
+export const MainTitle = styled(Title)`
+  position: absolute;
+  top: ${normalize(50)}px;
+`
+
 export const ModalTitle = styled(Title)`
   margin-top: ${normalize(10)}px;
   margin-bottom: ${normalize(10)}px;
@@ -89,8 +94,8 @@ export const DefaultView = styled(Row)`
 export const DefaultButton = styled.TouchableOpacity`
   background-color: #14BDAA;
   padding: ${normalize(10)}px ${normalize(20)}px;
-  width: 150px;
-  margin-top: 10px;
+  width: ${normalize(165)}px;
+  margin-top: ${normalize(10)}px;
   border-radius: 5px;
   justify-content: center;
   align-items: center;
@@ -137,15 +142,26 @@ export const Input = styled.TextInput`
   border-radius: 5px;
   height: ${normalize(40)}px;
   flex: 1;
-  width: 80px;
-  max-width: 200px;
+  width: ${normalize(80)}px;
+  max-width: ${normalize(210)}px;
 `
 
 export const PickerView = styled.View`
   width: 48%;
   background-color: #fff;
   border-bottom-width: 3px;
-  margin-top: 5px;
+  margin-top: ${normalize(5)}px;
   border-color: #14BDAA; 
   border-radius: 5px;
 `;
+
+export const ClientPickerView = styled(PickerView)`
+  width: ${normalize(210)}px;
+`
+
+export const NextButton = styled(DefaultButton)`
+  position: absolute;
+  bottom: ${normalize(50)}px;
+  right: ${normalize(10)}px;
+  align-self: flex-end;
+`

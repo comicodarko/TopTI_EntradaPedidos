@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Alert, Keyboard } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
+import Icon from 'react-native-vector-icons/AntDesign';
+
 import LogoImage from '../../assets/logo.png';
 
 import * as S from './styles';
@@ -28,12 +30,12 @@ export default function DrawerMenu({ navigation }) {
 
       <S.Row>
         <S.Row style={{flexDirection: 'row'}}>
-          <S.IpText>IP:</S.IpText>
+          <S.DefaultText>IP:</S.DefaultText>
           <S.IpInput
             value={ip}
             onChangeText={(text) => setIp(text)}
           />  
-          <S.IpButton
+          <S.Button
             onPress={ async () => {
               await AsyncStorage.setItem('ipkey', ip);
               Keyboard.dismiss();
@@ -43,9 +45,13 @@ export default function DrawerMenu({ navigation }) {
               })
             }}
           >
-          <S.IpText>Confirmar</S.IpText>  
-        </S.IpButton>  
+          <S.DefaultText>Confirmar</S.DefaultText>  
+        </S.Button>  
         </S.Row>
+        <S.Button style={{ flexDirection: 'row' }}>
+          <S.DefaultText>Recarregar </S.DefaultText>
+          <Icon name='reload1' color='#fff' size={25}/>
+        </S.Button>
       </S.Row>
     </S.Container>
   );

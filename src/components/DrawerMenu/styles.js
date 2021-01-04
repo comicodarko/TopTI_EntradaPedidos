@@ -38,7 +38,7 @@ export const Title = styled.Text`
   color: #fff;
 `
 
-export const IpText = styled.Text`
+export const DefaultText = styled.Text`
   font-family: sans-serif-light;
   font-size: ${normalize(16)}px;
   color: #fff;
@@ -56,7 +56,7 @@ export const IpInput = styled.TextInput`
   border-radius: 5px;
 `;
 
-export const IpButton = styled.TouchableOpacity`
+export const Button = styled.TouchableOpacity`
   background-color: #14BDAA;
   align-items: center;
   justify-content: center;

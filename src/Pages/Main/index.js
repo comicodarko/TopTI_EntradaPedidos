@@ -3,8 +3,6 @@ import DateTimePicker from '@react-native-community/datetimepicker';
 import {Picker} from '@react-native-picker/picker';
 
 import * as S from './styles';
-import { AddService } from './Details/styles'
-
 import normalize from '../../utils/normalize';
 
 export default function Main({ navigation }){
@@ -30,7 +28,7 @@ export default function Main({ navigation }){
         />
       )}
 
-      <S.Title style={{ position: 'absolute', top: 40 }}>Entrada de Pedidos</S.Title>
+      <S.MainTitle>Entrada de Pedidos</S.MainTitle>
       <S.Header>
         <S.DefaultView>
           <S.DefaultText>Entrada:</S.DefaultText>
@@ -45,15 +43,15 @@ export default function Main({ navigation }){
 
         <S.DefaultView>
           <S.DefaultText>Cliente:</S.DefaultText>
-          <S.PickerView style={{ width: 200 }}>
+          <S.ClientPickerView>
             <Picker
               selectedValue={1}
-              style={{height: 35, width: '100%', color: '#000'}}
+              style={{height: normalize(40), width: '100%', color: '#000'}}
               onValueChange={() => {}}>
               <Picker.Item label="FULANO" value={1} />
               <Picker.Item label="BELTRANO" value={2} />
             </Picker>
-          </S.PickerView>
+          </S.ClientPickerView>
         </S.DefaultView>
 
         <S.DefaultView>
@@ -61,14 +59,11 @@ export default function Main({ navigation }){
           <S.Input />
         </S.DefaultView>
       </S.Header>
-      <AddService
-        style={{ position: 'absolute', bottom: 50, right: 10, alignSelf: 'flex-end'}}
-        onPress={() => navigation.navigate('Details')}
-      > 
+      <S.NextButton onPress={() => navigation.navigate('Details')} > 
         <S.DefaultText>
           Prosseguir
         </S.DefaultText>
-      </AddService>
+      </S.NextButton>
     </S.Container>
   );
 };

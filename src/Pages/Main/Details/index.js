@@ -1,105 +1,107 @@
 import React from 'react';
 import {Picker} from '@react-native-picker/picker';
 
+import normalize from '../../../utils/normalize';
+
 import Icon from 'react-native-vector-icons/Feather';
 
 import { Container, DefaultView, DefaultText, PickerView, Input } from '../styles';
-import { AddService, Details as Detail, Service, ServiceText, Scroll } from './styles';
+import * as S from './styles';
 
 export default function Details({ navigation }) {
   return (
     <Container>
-      <Detail  style={{ borderColor: '#0000' }}>
-        <DefaultView style={{ flexDirection: 'column' }}>
+      <S.Details  style={{ borderColor: '#0000' }}>
+        <S.DefaultViewColumn>
           <DefaultText>Lavado</DefaultText>
           <PickerView>
             <Picker
               selectedValue={1}
-              style={{height: 40, width: '100%', color: '#000'}}
+              style={{height: normalize(40), width: '100%', color: '#000'}}
               onValueChange={() => {}}>
               <Picker.Item label="AMACIADO" value={1} />
               <Picker.Item label="DESTROYER" value={2} />
             </Picker>
           </PickerView>
-        </DefaultView>
+        </S.DefaultViewColumn>
 
-        <DefaultView style={{ flexDirection: 'column' }}>
+        <S.DefaultViewColumn>
           <DefaultText>Roupa</DefaultText>
           <PickerView>
             <Picker
               selectedValue={1}
-              style={{height: 40, width: '100%', color: '#000'}}
+              style={{height: normalize(40), width: '100%', color: '#000'}}
               onValueChange={() => {}}>
               <Picker.Item label="BERMUDA" value={1} />
               <Picker.Item label="CALÇA" value={2} />
             </Picker>
           </PickerView>
-        </DefaultView>
-      </Detail>
-      <Detail>
-        <DefaultView style={{ flexDirection: 'column', height: 70 }}>
-          <DefaultText style={{ marginBottom: 5 }}>Quantidade:</DefaultText>  
+        </S.DefaultViewColumn>
+      </S.Details>
+      <S.Details>
+        <S.DefaultViewColumn>
+          <DefaultText>Quantidade:</DefaultText>  
           <Input
             style={{ textAlign: 'center' }}
             keyboardType='number-pad'
           />
-        </DefaultView>  
-        <DefaultView style={{ flexDirection: 'column', height: 70 }}>
-          <DefaultText style={{ marginBottom: 5 }}>Peso Unitário:</DefaultText>  
+        </S.DefaultViewColumn>  
+        <S.DefaultViewColumn style={{ height: normalize(75) }}>
+          <DefaultText>Peso Unitário:</DefaultText>  
           <Input
             style={{ textAlign: 'center' }}
             keyboardType='number-pad'
           />
-        </DefaultView>  
-      </Detail>
-      <Detail  style={{ borderColor: '#0000', flexWrap: 'wrap' }}>
+        </S.DefaultViewColumn>  
+      </S.Details>
+      <S.Details  style={{ borderColor: '#0000', flexWrap: 'wrap' }}>
         <DefaultView>
           <PickerView>
             <Picker
               selectedValue={1}
-              style={{height: 40, width: '100%', color: '#000'}}
+              style={{height: normalize(40), width: '100%', color: '#000'}}
               onValueChange={() => {}}>
               <Picker.Item label="Serviço 1" value={1} />
               <Picker.Item label="Serviço 2" value={2} />
             </Picker>
           </PickerView>
-          <AddService style={{ marginBottom: 5 }}>
+          <S.AddService style={{ marginBottom: normalize(5) }}>
             <DefaultText>Adicionar</DefaultText>
-          </AddService>
+          </S.AddService>
         </DefaultView>
-        <DefaultView style={{ flexDirection: 'column' }}>
+        <S.DefaultViewColumn>
           <DefaultText>Serviços Adicionados:</DefaultText>
 
-          <Scroll>
-            <Service>
-              <ServiceText>Serviço 1</ServiceText>
-              <Icon name="trash-2" color="#BD211E" size={30} />
-            </Service>
-            <Service>
-              <ServiceText>Serviço 3</ServiceText>
-              <Icon name="trash-2" color="#BD211E" size={30} />
-            </Service>
-            <Service>
-              <ServiceText>Serviço 5</ServiceText>
-              <Icon name="trash-2" color="#BD211E" size={30} />
-            </Service>
-          </Scroll>
+          <S.Scroll>
+            <S.Service>
+              <S.ServiceText>Serviço 1</S.ServiceText>
+              <Icon name="trash-2" color="#BD211E" size={normalize(30)} />
+            </S.Service>
+            <S.Service>
+              <S.ServiceText>Serviço 3</S.ServiceText>
+              <Icon name="trash-2" color="#BD211E" size={normalize(30)} />
+            </S.Service>
+            <S.Service>
+              <S.ServiceText>Serviço 5</S.ServiceText>
+              <Icon name="trash-2" color="#BD211E" size={normalize(30)} />
+            </S.Service>
+          </S.Scroll>
           <DefaultView>
-            <AddService 
+            <S.AddService 
               style={{ backgroundColor: '#F99702' }}
               onPress={() => navigation.goBack()}>
               <DefaultText>
                 Voltar
               </DefaultText>
-            </AddService>
-            <AddService>
+            </S.AddService>
+            <S.AddService>
               <DefaultText>
                 Dar Entrada
               </DefaultText>
-            </AddService>
+            </S.AddService>
           </DefaultView>
-        </DefaultView>
-      </Detail>
+        </S.DefaultViewColumn>
+      </S.Details>
     </Container>
   );
 };
