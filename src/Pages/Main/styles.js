@@ -103,7 +103,7 @@ export const DefaultButton = styled.TouchableOpacity`
 
 export const DefaultText = styled.Text`
   color: #fff;
-  font-size: ${normalize(26)}px;
+  font-size: ${normalize(22)}px;
   font-family: sans-serif-light;
 `
 

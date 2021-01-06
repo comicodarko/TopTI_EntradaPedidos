@@ -29,7 +29,7 @@ function StackNav({navigation}) {
 function App() {
   return (
     <NavigationContainer>
-        <StatusBar barStyle="light-content" translucent={true}/>
+        <StatusBar barStyle="light-content" backgroundColor="#0000" translucent={true}/>
         <Drawer.Navigator
           initialRouteName="Login"
           drawerContent={props => <DrawerMenu {...props } />}

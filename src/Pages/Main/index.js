@@ -9,6 +9,7 @@ export default function Main({ navigation }){
 
   const [dateShow, setDateShow] = useState(false);
   const [date, setDate] = useState(new Date());
+  const [newDate, setNewDate] = useState(date);
 
   return (
     <S.Container>
@@ -16,13 +17,14 @@ export default function Main({ navigation }){
       {dateShow && (
         <DateTimePicker
           testID="dateTimePicker"
-          value={date}
+          value={newDate}
           mode="date"
+          minimumDate={date - 2592000000}
           maximumDate={date}
           display="default"
           onChange={(e, selectedDate) => {
-            const currentDate = selectedDate || date;
-            setDate(currentDate);
+            const currentDate = selectedDate || newDate;
+            setNewDate(currentDate);
             setDateShow(false);
           }}
         />
@@ -35,7 +37,7 @@ export default function Main({ navigation }){
           <S.DateButton onPress={() => {setDateShow(true)}}>
             <S.DateView>
               <S.DateText>
-                {`${date.getDate()}/${(date.getMonth() + 1)}/${date.getFullYear()}`}
+                {`${newDate.getDate()}/${(newDate.getMonth() + 1)}/${newDate.getFullYear()}`}
               </S.DateText>
             </S.DateView>
           </S.DateButton>
