@@ -42,7 +42,7 @@ export default function Login({ navigation, route }) {
     navigation.navigate('StackNav', {
       screen: 'Main',
       params: {
-        ip: '',
+        ip: settedIp,
         funcionario: ''
       }  
     });

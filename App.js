@@ -1,8 +1,9 @@
 import 'react-native-gesture-handler';
-import React from 'react';
+import React, { useEffect } from 'react';
+import BackgroundColor from 'react-native-background-color';
 import { StatusBar } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator, CardStyleInterpolators } from '@react-navigation/stack';
+import { createStackNavigator, CardStyleInterpolators, TransitionPresets } from '@react-navigation/stack';
 import { createDrawerNavigator  } from '@react-navigation/drawer';
 
 import Login from './src/Pages/Login';
@@ -16,17 +17,23 @@ const Stack = createStackNavigator();
 function StackNav({navigation}) {
   return(
     <Stack.Navigator initialRouteName="Login"
-        screenOptions={{
-          cardStyleInterpolator: CardStyleInterpolators.forScaleFromCenterAndroid,
-          headerShown: false
-        }}
-      >
-      <Stack.Screen initialParams={{ ip: ''}} name="Main" component={Main} />  
+      screenOptions={{
+        cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+        headerShown: false        
+      }}     
+    >
+      <Stack.Screen initialParams={{ ip: '', funcionario: ''}} name="Login" component={Login} />      
+      <Stack.Screen initialParams={{ ip: ''}} name="Main" component={Main} />
+      <Stack.Screen name="StackNav" component={StackNav} />
+      <Stack.Screen name="Details" component={Details} />
     </Stack.Navigator>
   )
 }
 
 function App() {
+  useEffect(() => {
+    Platform.OS === "android" && setTimeout(() => { BackgroundColor.setColor("#202020") }, 500);
+  }, [])
   return (
     <NavigationContainer>
         <StatusBar barStyle="light-content" backgroundColor="#0000" translucent={true}/>
@@ -34,9 +41,7 @@ function App() {
           initialRouteName="Login"
           drawerContent={props => <DrawerMenu {...props } />}
         >
-          <Drawer.Screen initialParams={{ ip: '', funcionario: ''}} name="Login" component={Login} />      
-          <Drawer.Screen name="StackNav" component={StackNav} />
-          <Drawer.Screen name="Details" component={Details} />
+          <Drawer.Screen name="StackNav" component={StackNav} />          
         </Drawer.Navigator>
     </NavigationContainer>
   )

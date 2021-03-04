@@ -1,3 +1,4 @@
+import { Platform } from 'react-native';
 import styled from 'styled-components/native';
 
 import normalize from '../../utils/normalize';
@@ -25,7 +26,7 @@ export const MenuButton = styled.TouchableOpacity`
 
 export const Title = styled.Text`
   width: 100%;
-  font-family: sans-serif-condensed;
+  font-family: ${Platform.OS === 'ios' ? 'HelveticaNeue-CondensedBlack' : 'sans-serif-condensed'};
   text-transform: uppercase;
   text-align: center;
   font-size: ${normalize(28)}px;
@@ -61,7 +62,7 @@ export const ModalView = styled.View`
 
 export const ModalText = styled.Text`
   font-size: ${normalize(22)}px;
-  font-family: sans-serif-condensed;
+  font-family: ${Platform.OS === 'ios' ? 'HelveticaNeue-CondensedBlack' : 'sans-serif-condensed'};
   text-transform: uppercase;
   color: #14BDAA;
   text-align: center;
@@ -104,7 +105,7 @@ export const DefaultButton = styled.TouchableOpacity`
 export const DefaultText = styled.Text`
   color: #fff;
   font-size: ${normalize(22)}px;
-  font-family: sans-serif-light;
+  font-family: ${Platform.OS === 'ios' ? 'Helvetica-Light' : 'sans-serif-light'};
 `
 
 export const Header = styled.View`
@@ -127,7 +128,7 @@ export const DateButton = styled.TouchableOpacity`
 export const DateText = styled.Text`
   color: #fff;
   font-size: ${normalize(24)}px;
-  font-family: sans-serif-condensed;
+  font-family: ${Platform.OS === 'ios' ? 'HelveticaNeue-CondensedBlack' : 'sans-serif-condensed'};
 `
 
 export const Input = styled.TextInput`
@@ -149,6 +150,7 @@ export const Input = styled.TextInput`
 export const PickerView = styled.View`
   width: 48%;
   background-color: #fff;
+  height: ${normalize(45)}px;
   border-bottom-width: 3px;
   margin-top: ${normalize(5)}px;
   border-color: #14BDAA; 

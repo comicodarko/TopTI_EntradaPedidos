@@ -1,3 +1,4 @@
+import { Platform } from 'react-native';
 import styled from 'styled-components/native';
 
 import normalize from '../../utils/normalize';
@@ -49,7 +50,7 @@ export const Input = styled.TextInput`
   border-radius: ${normalize(10)}px;
   background-color: #fff;
   font-size: ${normalize(18)}px;
-  font-family: sans-serif-light;
+  font-family: ${Platform.OS === 'ios' ? 'Helvetica-Light' : 'sans-serif-light'};
 `
 
 export const Loading = styled.ActivityIndicator`

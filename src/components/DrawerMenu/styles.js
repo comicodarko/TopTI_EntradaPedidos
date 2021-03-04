@@ -1,3 +1,4 @@
+import { Platform } from 'react-native';
 import styled from 'styled-components/native';
 import normalize from '../../utils/normalize';
 
@@ -28,18 +29,18 @@ export const Logo = styled.Image`
 `;
 
 export const Version = styled.Text`
-  font-family: sans-serif-light;
+  font-family: ${Platform.OS === 'ios' ? 'Helvetica-Light' : 'sans-serif-light'};
   color: #aaa;
 `;
  
 export const Title = styled.Text`
-  font-family: sans-serif-light;
+  font-family: ${Platform.OS === 'ios' ? 'Helvetica-Light' : 'sans-serif-light'};
   font-size: ${normalize(28)}px;
   color: #fff;
 `
 
 export const DefaultText = styled.Text`
-  font-family: sans-serif-light;
+  font-family: ${Platform.OS === 'ios' ? 'Helvetica-Light' : 'sans-serif-light'};
   font-size: ${normalize(16)}px;
   color: #fff;
 `

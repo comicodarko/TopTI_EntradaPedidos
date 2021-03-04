@@ -1,3 +1,4 @@
+import { Platform } from 'react-native';
 import styled from 'styled-components/native';
 import normalize from '../../../utils/normalize';
 
@@ -28,15 +29,14 @@ justify-content: space-between;
 align-self: center;
 flex-wrap: wrap;
 background: #fff;
-width: 80%;
+width: 95%;
 margin-top: ${normalize(10)}px;
 padding: ${normalize(5)}px ${normalize(10)}px;
-border-radius: 5px;
 `
 
 export const ServiceText = styled(DefaultText)`
 font-size: ${normalize(18)}px;
-font-family: sans-serif-condensed;
+font-family: ${Platform.OS === 'ios' ? 'HelveticaNeue-CondensedBlack' : 'sans-serif-condensed'};
 text-transform: uppercase;
 color: #000;
 `
